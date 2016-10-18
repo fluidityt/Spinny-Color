@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Build All Targets.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Spinny iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>C14B9FC11DB6B17E00C954C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1E621431DB6CDA3001EE3B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

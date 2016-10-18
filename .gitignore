@@ -1,0 +1,24 @@
+
+Spinny macOS.app/Contents/_CodeSignature/CodeDirectory
+
+Spinny macOS.app/Contents/_CodeSignature/CodeRequirements
+
+Spinny macOS.app/Contents/_CodeSignature/CodeRequirements-1
+
+Spinny macOS.app/Contents/_CodeSignature/CodeResources
+
+Spinny macOS.app/Contents/_CodeSignature/CodeSignature
+
+*.dylib
+
+Spinny macOS.app/Contents/Info.plist
+
+Spinny macOS.app/Contents/MacOS/Spinny macOS
+
+Spinny macOS.app/Contents/PkgInfo
+
+*.car
+
+Spinny macOS.app/Contents/Resources/Base.lproj/MainMenu.nib
+
+Spinny macOS.app/Contents/Frameworks/libswiftAppKit.dylib
