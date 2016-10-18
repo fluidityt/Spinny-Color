@@ -1,0 +1,166 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		C1248BBA1DB6B79C00C92913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1248BB51DB6B79C00C92913 /* Spinny Tests.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1248B8F1DB6B2AC00C92913;
+			remoteInfo = console;
+		};
+		C1248BBC1DB6B79C00C92913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1248BB51DB6B79C00C92913 /* Spinny Tests.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1248B9B1DB6B2EF00C92913;
+			remoteInfo = test;
+		};
+		C1248BC31DB6B7B100C92913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1248BBE1DB6B7B100C92913 /* Spinny Color.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C14B9FC21DB6B17E00C954C7;
+			remoteInfo = "Spinny iOS";
+		};
+		C1248BC51DB6B7B100C92913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1248BBE1DB6B7B100C92913 /* Spinny Color.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1248B731DB6B1DF00C92913;
+			remoteInfo = "Spinny macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1248BB51DB6B79C00C92913 /* Spinny Tests.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Spinny Tests.xcodeproj"; path = "../Spinny Tests.xcodeproj"; sourceTree = "<group>"; };
+		C1248BBE1DB6B7B100C92913 /* Spinny Color.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Spinny Color.xcodeproj"; sourceTree = "<group>"; };
+		C1248BC71DB6B7C900C92913 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		C1248BAE1DB6B78A00C92913 = {
+			isa = PBXGroup;
+			children = (
+				C1248BC71DB6B7C900C92913 /* File.swift */,
+				C1248BBE1DB6B7B100C92913 /* Spinny Color.xcodeproj */,
+				C1248BB51DB6B79C00C92913 /* Spinny Tests.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		C1248BB61DB6B79C00C92913 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1248BBB1DB6B79C00C92913 /* console */,
+				C1248BBD1DB6B79C00C92913 /* test.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1248BBF1DB6B7B100C92913 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1248BC41DB6B7B100C92913 /* Spinny iOS.app */,
+				C1248BC61DB6B7B100C92913 /* Spinny macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		C1248BAF1DB6B78A00C92913 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+			};
+			buildConfigurationList = C1248BB21DB6B78A00C92913 /* Build configuration list for PBXProject "Spinny Globes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C1248BAE1DB6B78A00C92913;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C1248BBF1DB6B7B100C92913 /* Products */;
+					ProjectRef = C1248BBE1DB6B7B100C92913 /* Spinny Color.xcodeproj */;
+				},
+				{
+					ProductGroup = C1248BB61DB6B79C00C92913 /* Products */;
+					ProjectRef = C1248BB51DB6B79C00C92913 /* Spinny Tests.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C1248BBB1DB6B79C00C92913 /* console */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = console;
+			remoteRef = C1248BBA1DB6B79C00C92913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C1248BBD1DB6B79C00C92913 /* test.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = test.xctest;
+			remoteRef = C1248BBC1DB6B79C00C92913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C1248BC41DB6B7B100C92913 /* Spinny iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Spinny iOS.app";
+			remoteRef = C1248BC31DB6B7B100C92913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C1248BC61DB6B7B100C92913 /* Spinny macOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Spinny macOS.app";
+			remoteRef = C1248BC51DB6B7B100C92913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		C1248BB31DB6B78A00C92913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		C1248BB41DB6B78A00C92913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1248BB21DB6B78A00C92913 /* Build configuration list for PBXProject "Spinny Globes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1248BB31DB6B78A00C92913 /* Debug */,
+				C1248BB41DB6B78A00C92913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1248BAF1DB6B78A00C92913 /* Project object */;
+}
