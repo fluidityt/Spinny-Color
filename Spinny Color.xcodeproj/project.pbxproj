@@ -166,6 +166,7 @@
 		C1248BE01DB6B95000C92913 /* GLOBAL */ = {
 			isa = PBXGroup;
 			children = (
+				C1248B791DB6B1DF00C92913 /* GameScene.sks */,
 				C1E6214C1DB6D297001EE3B3 /* globes.swift */,
 				C126D63F1DB6C58F006F72E8 /* util.swift */,
 				C1E6214B1DB6D1C0001EE3B3 /* funky */,
@@ -177,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				C1248B7B1DB6B1DF00C92913 /* Assets.xcassets */,
-				C1248B791DB6B1DF00C92913 /* GameScene.sks */,
 			);
 			name = "Global Junks";
 			sourceTree = "<group>";
@@ -853,6 +853,7 @@
 				C1E6214A1DB6CDA3001EE3B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

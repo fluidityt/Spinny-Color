@@ -11,7 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
 		iDidMoveToView(view, scene: self)
-		makeLabel("hey there")
+		makeLabel("ey there")
 		}
 	
 	override func mouseDown(theEvent: NSEvent) {

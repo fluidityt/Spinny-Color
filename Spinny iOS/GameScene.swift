@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
 		iDidMoveToView(view, scene: self)
+		// FIXME: This doesn't show up properly like it does on the mac os
+		makeLabel("sup over there")
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

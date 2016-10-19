@@ -10,3 +10,4 @@ import SpriteKit
 internal var gView: SKView?
 internal var gScene: SKScene?
 internal var gTime: NSTimeInterval?
+
