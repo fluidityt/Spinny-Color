@@ -8,11 +8,16 @@
 
 import SpriteKit
 
+// TODO: Test my centerOf funcs
+
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
+		self.size = CGSize(width: view.bounds.width, height: view.bounds.height)
+		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+		self.position = CGPoint(x: 0, y: 0)
+		
 		iDidMoveToView(view, scene: self)
-		// FIXME: This doesn't show up properly like it does on the mac os
-		makeLabel("sup over there")
+	
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

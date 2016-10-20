@@ -10,9 +10,18 @@ import SpriteKit
 
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
+		
+		/*
+		self.size.height = 400
+		self.size.width = 400
+		self.position = CGPoint(x: 0, y: 0)
+		*/
+		
 		iDidMoveToView(view, scene: self)
-		makeLabel("ey there")
-		}
+		
+		print(view.bounds)
+		
+	}
 	
 	override func mouseDown(theEvent: NSEvent) {
 		// macOS specific initials:
