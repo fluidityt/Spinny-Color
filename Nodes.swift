@@ -21,7 +21,7 @@ struct Nodes {
 		
 		//framed = scene.childNodeWithName("framed") as! SKShapeNode
 		
-		move = (left: sksNode("left") as! SKSpriteNode,
+		move = (left: sksNode("left")   as! SKSpriteNode,
 		        right: sksNode("right") as! SKSpriteNode)
 		
 		camera = SKCameraNode()

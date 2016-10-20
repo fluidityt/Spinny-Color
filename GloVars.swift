@@ -7,16 +7,15 @@
 //
 
 import SpriteKit
+var
+	gView: SKView?, // assigned in Appdelegate / view controller
 
-internal var
-gView: SKView?,
+	gScene: SKScene?, // assigned in Appdelegate / view controller
 
-gScene: SKScene?,
+	gTime: NSTimeInterval?, // Assigned in iDMV
 
-gTime: NSTimeInterval?,
+	gNodes: Nodes?, // Assigned in iDMV
 
-gNodes: Nodes?,
+	sys: System2? // Assigned in iDMV
 
-sys: System2?
-
-struct System2 {}
+internal struct System2 {}
