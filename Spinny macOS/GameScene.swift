@@ -24,10 +24,10 @@ class GameScene: SKScene {
 	
 	override func mouseDown(theEvent: NSEvent) {
 		// macOS specific initials:
-		//let location = theEvent.locationInNode(self)
-		//let time_at_began = theEvent.timestamp
+		let location = theEvent.locationInNode(self)
+		let time_at_began = theEvent.timestamp
 		
-		//iTouchesBegan(location, timeAtBegan: time_at_began)
+		iTouchesBegan(location, timeAtBegan: time_at_began)
 		
 	}
 	

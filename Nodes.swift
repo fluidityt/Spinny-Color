@@ -46,6 +46,7 @@ struct Nodes {
 		// Label
 		label = SKLabelNode(text: "Hey there")
 		label.addToScene(scene)
+		label.position = centerOf(scene: scene)
 
 	}
 }

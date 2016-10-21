@@ -7,5 +7,9 @@
 //
 
 import Foundation
+import SpriteKit
 
-//print(zigger)
+setup: do {let scene = SKScene(size: CGSize(width: 800, height: 600)); let view = SKView(frame: NSRect(x: 0, y: 0, width: 800, height: 600)); iDidMoveToView(view, scene: scene)}; let n = gNodes!
+
+
+print(n.label.frame)

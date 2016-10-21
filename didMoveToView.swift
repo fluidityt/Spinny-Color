@@ -8,8 +8,6 @@
 
 import SpriteKit
 
-
-
 internal func iDidMoveToView(view: SKView, scene: SKScene) {
 	
 		scene.anchorPoint = CGPoint(x: 0,y: 0)
