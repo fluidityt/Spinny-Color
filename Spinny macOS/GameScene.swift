@@ -11,15 +11,17 @@ import SpriteKit
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
 		
-		/*
-		self.size.height = 400
-		self.size.width = 400
-		self.position = CGPoint(x: 0, y: 0)
-		*/
+		self.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+		self.size.height = view.bounds.height
+		self.size.width = view.bounds.width
+		self.position = CGPoint(x:0,y:0)
 		
-		iDidMoveToView(view, scene: self)
+	
 		
-		print(view.bounds)
+		
+		// iDidMoveToView(view, scene: self)
+		
+
 		
 	}
 	
@@ -28,7 +30,7 @@ class GameScene: SKScene {
 		let location = theEvent.locationInNode(self)
 		let time_at_began = theEvent.timestamp
 		
-		iTouchesBegan(location, timeAtBegan: time_at_began)
+		//iTouchesBegan(location, timeAtBegan: time_at_began)
 	}
 	
 	override func update(currentTime: CFTimeInterval) {
