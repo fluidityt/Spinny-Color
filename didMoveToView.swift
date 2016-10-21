@@ -12,12 +12,16 @@ import SpriteKit
 
 internal func iDidMoveToView(view: SKView, scene: SKScene) {
 	
-	gView = view
-	gScene = scene
+		scene.anchorPoint = CGPoint(x: 0,y: 0)
+		scene.size.height = view.bounds.height
+		scene.size.width  = view.bounds.width
 	
-	// All node setup:
-	gNodes = Nodes(view: view, scene: scene)
+		
+	
 
-	makeLabel("ASLDFJASLKDFHS;LADHFASHF", alignment: centerOf(scene: scene))
+	// All node setup:
+	 gNodes = Nodes(view: view, scene: scene)
+
+	//makeLabel("ASLDFJASLKDFHS;LADHFASHF", alignment: centerOf(scene: scene))
 }
 

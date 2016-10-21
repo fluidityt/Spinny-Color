@@ -10,14 +10,13 @@ import SpriteKit
 
 // TODO: Test my centerOf funcs
 
+
 class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
-		self.size = CGSize(width: view.bounds.width, height: view.bounds.height)
-		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-		self.position = CGPoint(x: 0, y: 0)
-		
 		iDidMoveToView(view, scene: self)
 	
+		//self.childNodeWithName("mySquare")?.position = point(0,0)
+		
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -25,7 +24,7 @@ class GameScene: SKScene {
 		
 		let location = touches.first?.locationInNode(self)
 		let time_at_began = event!.timestamp
-		iTouchesBegan(location!, timeAtBegan: time_at_began)
+		//iTouchesBegan(location!, timeAtBegan: time_at_began)
 		
 	}
 	

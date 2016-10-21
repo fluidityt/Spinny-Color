@@ -23,9 +23,12 @@ public extension SKNode {
 
 		// MARK: Nodes:
 
-// TODO: error checking and type matching
-/// ChildNodeWithName
+public func copyNode(sprite: SKSpriteNode) -> SKSpriteNode { return sprite.copy() as! SKSpriteNode }
+public func copyNode(node:   SKNode) 			 -> SKNode { return node.copy() as! SKNode }
+public func copyNode(shape:  SKShapeNode)  -> SKShapeNode { return shape.copy() as! SKShapeNode }
+
 public func sksNode(node: String) -> SKNode {
+	// TODO: error checking and type matching
 	return gScene!.childNodeWithName(node)!
 }
 
@@ -33,7 +36,7 @@ public func sksNode(node: String, parent: String) -> SKNode {
 	return gScene!.childNodeWithName(parent)!.childNodeWithName(node)!
 }
 
-// MARK: Set To Center:
+		// MARK: Set To Center:
 
 public func centerOf(scene scene: SKScene) -> CGPoint {
 	return CGPoint(x:CGRectGetMidX(scene.frame), y:CGRectGetMidY(scene.frame))
@@ -49,27 +52,23 @@ public func centerOf(view view: SKView) -> CGPoint {
 
 		// MARK: View:
 
+		// MARK: Points:
 
-		// MARK: Alignments:
+func point(x: CGFloat,_ y: CGFloat) -> CGPoint { return CGPoint(x: x, y: y) }
 
-/// Aligns something on top of an X axis, and on the RHS of the vertical line
-public func alignAboveRight(node: SKNode, point: CGPoint) -> CGPoint {
-	return CGPoint(x: point.x + node.frame.width/2, y: point.y + node.frame.height/2)
-}
 
-public func alignAboveLeft(node: SKNode, point: CGPoint) -> CGPoint {
-	return CGPoint(x: point.x - node.frame.width/2, y: point.y + node.frame.height/2)
-}
+//public func alignAboveRight(point: CGPoint) -> CGPoint {}
+
 
 		// MARK: Label:
 
 /// Adds a label for debugging and testing
-public func makeLabel(text: String, alignment: CGPoint) {
+public func makeLabel(text: String, position: CGPoint) {
 	// TODO: Again add the guard let thing for scene
 	let myLabel = SKLabelNode(fontNamed:"Chalkduster"); let __=myLabel
 	myLabel.text = text
 	__		 .fontSize = 22
-	__		 .position = alignAboveRight(myLabel, point: alignment)
+	__		 .position = position
 	__		 .addToScene(gScene!)
 }
 

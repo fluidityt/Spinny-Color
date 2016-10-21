@@ -9,31 +9,43 @@
 import SpriteKit
 
 // TODO: Error and nil checks
+// TODO: SK Constraints
+
 /// Handles initialization and calling of the global nodes
 struct Nodes {
 	
-	let move: (left: SKSpriteNode, right: SKSpriteNode)
-	let camera: SKCameraNode
-	let myLabel: SKLabelNode
-	//let framed: SKShapeNode
+	let move: (left: SKSpriteNode,
+						right: SKSpriteNode),
+	
+	 camera: SKCameraNode,
+	 label: SKLabelNode
+		// bkg: SKSpriteNode
+	
+		//let framed: SKShapeNode
 	
 	init(view: SKView, scene: SKScene) {
 		
-		//framed = scene.childNodeWithName("framed") as! SKShapeNode
+		// L/R
+		let left = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: 100, height: 100))
+			let right = SKSpriteNode(color: SKColor.blackColor(), size: CGSize(width: 100, height: 100))
+		left.addToScene(scene)
+			right.addToScene(scene)
+		left.position = centerOf(scene: scene)
+			right.position = centerOf(scene: scene)
+		left.position.x = 0 + left.frame.width/2
+			right.position.x = scene.frame.maxX - right.frame.width/2
+		move.left = left
+			move.right = right
 		
-		move = (left: sksNode("left")   as! SKSpriteNode,
-		        right: sksNode("right") as! SKSpriteNode)
-		
+		// Camera
 		camera = SKCameraNode()
-		scene.camera = camera
 		camera.addToScene(scene)
-		camera.runAction(SKAction.moveTo(CGPoint(x: -400, y: 0), duration: 10))
+		camera.position = centerOf(scene: scene)
+		scene.camera = camera
 		
-		myLabel = SKLabelNode(fontNamed:"Chalkduster")	;let ml=myLabel;_=ml
-			.text  		= "Hello, World"				;_=ml
-			.fontSize = 45										;_=ml
-			.position = centerOf(scene: scene);_=ml
-			.addToScene(scene)
-		
+		// Label
+		label = SKLabelNode(text: "Hey there")
+		label.addToScene(scene)
+
 	}
 }
