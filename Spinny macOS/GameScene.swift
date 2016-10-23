@@ -8,29 +8,31 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+final internal class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
-		
 
-		
-	
-		//self.childNodeWithName("mySquare")?.position = point(0,0)
-		
-		 iDidMoveToView(view, scene: self)
-		
+		// Adjust scene -> configure nodes -> Return
+		_iDidMoveToView(view, scene: self)
 
-		
 	}
-	
+
 	override func mouseDown(theEvent: NSEvent) {
 		// macOS specific initials:
 		let location = theEvent.locationInNode(self)
 		let time_at_began = theEvent.timestamp
+<<<<<<< HEAD
 		
 		iTouchesBegan(location, timeAtBegan: time_at_began)
 		
+=======
+
+		_iTouchesBegan(location, timeAtBegan: time_at_began)
+
+>>>>>>> origin/1
 	}
-	
+
 	override func update(currentTime: CFTimeInterval) {
+
+		iUpdate(currentTime)
 	}
 }

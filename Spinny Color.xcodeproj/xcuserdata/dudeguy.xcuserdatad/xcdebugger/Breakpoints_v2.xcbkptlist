@@ -9,6 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "Spinny macOS/GameScene.swift"
             timestampString = "498709405.746137"
             startingColumnNumber = "9223372036854775807"
@@ -89,6 +90,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+=======
+>>>>>>> origin/1
             filePath = "Spinny iOS/GameViewController.swift"
             timestampString = "498711988.889428"
             startingColumnNumber = "9223372036854775807"

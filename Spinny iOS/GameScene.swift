@@ -8,28 +8,28 @@
 
 import SpriteKit
 
+
+
 // TODO: Test my centerOf funcs
-
-
-class GameScene: SKScene {
+final internal class GameScene: SKScene {
 	override func didMoveToView(view: SKView) {
+
+		// Adjust scene -> configure nodes -> Return
 		iDidMoveToView(view, scene: self)
-	
-		//self.childNodeWithName("mySquare")?.position = point(0,0)
-		
+
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		/* Called when a touch begins */
-		
+
 		let location = touches.first?.locationInNode(self)
 		let time_at_began = event!.timestamp
-		//iTouchesBegan(location!, timeAtBegan: time_at_began)
+		iTouchesBegan(location!, timeAtBegan: time_at_began)
 		
 	}
 	
 	override func update(currentTime: CFTimeInterval) {
-		/* Called before each frame is rendered */
+
+		iUpdate(currentTime)
 	}
 }
 

@@ -17,16 +17,24 @@ public extension SKNode {
 	public func addToScene(scene: SKScene) {
 		scene.addChild(self)
 	}
+<<<<<<< HEAD
 	
 	public func moveTo(point: CGPoint, duration: NSTimeInterval) {
 		self.runAction(SKAction.moveTo(point, duration: duration))
 	}
 	
+=======
+
+	public func moveTo(location: CGPoint, duration: NSTimeInterval) {
+		self.runAction(SKAction.moveTo(location, duration: duration))
+	}
+>>>>>>> origin/1
 }
 
 		// MARK: Scene:
 
 		// MARK: Nodes:
+
 
 public func copyNode(sprite: SKSpriteNode) -> SKSpriteNode { return sprite.copy() as! SKSpriteNode }
 public func copyNode(node:   SKNode) 			 -> SKNode { return node.copy() as! SKNode }

@@ -3,11 +3,19 @@
 //  Spinny Color
 //
 //  Created by Dude Guy  on 10/20/16.
-//
-//
-
 import SpriteKit
-var
+
+
+/**
+TODO: Error and nil checks
+TODO: SK Constraints
+TODO: Check the guard let gScene = gScene thing...
+TODO: Test performance of calling methods for the entire gamescene overrides
+TODO: Test if updating a node every frame is better than checking with IF first (such as only move if camera moved)
+TODO: Use the performance  test to see if something is more efficient
+*/
+
+internal var
 	gView: SKView?, // assigned in Appdelegate / view controller
 
 	gScene: SKScene?, // assigned in Appdelegate / view controller
@@ -19,3 +27,9 @@ var
 	sys: System2? // Assigned in iDMV
 
 internal struct System2 {}
+
+
+/**
+FIXME: The text updating on the move looks weird... This occurs when using label.position in update
+
+*/
