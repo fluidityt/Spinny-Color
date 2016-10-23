@@ -35,6 +35,9 @@
 		C1CB9D281DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
 		C1CB9D291DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
 		C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
+		C1CB9D2C1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
+		C1CB9D2D1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
+		C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
 		C1E621471DB6CDA3001EE3B3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E621461DB6CDA3001EE3B3 /* main.swift */; };
 		C1E621501DB6D29A001EE3B3 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D63F1DB6C58F006F72E8 /* util.swift */; };
 		C1F7303B1DB957C10032AAC8 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303A1DB957C10032AAC8 /* Nodes.swift */; };
@@ -45,10 +48,6 @@
 		C1F730471DB9601D0032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
 		C1F730481DB9601E0032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
 		C1F730491DB960360032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
-		C1FD5C9C1DBAA51000D45E45 /* labelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD5C9B1DBAA51000D45E45 /* labelButton.swift */; };
-		C1FD5C9D1DBAA51000D45E45 /* labelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD5C9B1DBAA51000D45E45 /* labelButton.swift */; };
-		C1FD5C9E1DBAA51000D45E45 /* labelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD5C9B1DBAA51000D45E45 /* labelButton.swift */; };
-		C1FD5C9F1DBAAD8800D45E45 /* didMoveToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D63C1DB6C0B6006F72E8 /* didMoveToView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,12 +94,12 @@
 		C1CB9D1F1DBC45C300469C72 /* iTouchesMoved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTouchesMoved.swift; sourceTree = "<group>"; };
 		C1CB9D231DBC45DE00469C72 /* iTouchesEnded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTouchesEnded.swift; sourceTree = "<group>"; };
 		C1CB9D271DBC49F600469C72 /* iUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iUpdate.swift; sourceTree = "<group>"; };
+		C1CB9D2B1DBC55D900469C72 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		C1E621441DB6CDA3001EE3B3 /* Build All Targets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Build All Targets"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E621461DB6CDA3001EE3B3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C1F7303A1DB957C10032AAC8 /* Nodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C1F7303C1DB9582D0032AAC8 /* GloVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GloVars.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C1F730421DB95C130032AAC8 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
-		C1FD5C9B1DBAA51000D45E45 /* labelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = labelButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,17 +238,11 @@
 		C1E6214B1DB6D1C0001EE3B3 /* funky */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				C126D63C1DB6C0B6006F72E8 /* didMoveToView.swift */,
-				C1FD5C9B1DBAA51000D45E45 /* labelButton.swift */,
-				C126D6421DB6C7B0006F72E8 /* touchesBegan.swift */,
-=======
 				C126D63C1DB6C0B6006F72E8 /* iDidMoveToView.swift */,
 				C126D6421DB6C7B0006F72E8 /* iTouchesBegan.swift */,
 				C1CB9D1F1DBC45C300469C72 /* iTouchesMoved.swift */,
 				C1CB9D231DBC45DE00469C72 /* iTouchesEnded.swift */,
 				C1CB9D271DBC49F600469C72 /* iUpdate.swift */,
->>>>>>> origin/1
 			);
 			name = funky;
 			sourceTree = "<group>";
@@ -258,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F7303A1DB957C10032AAC8 /* Nodes.swift */,
+				C1CB9D2B1DBC55D900469C72 /* Button.swift */,
 			);
 			name = structy;
 			sourceTree = "<group>";
@@ -425,12 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				C1FD5C9D1DBAA51000D45E45 /* labelButton.swift in Sources */,
-				C126D63D1DB6C0B6006F72E8 /* didMoveToView.swift in Sources */,
-=======
 				C126D63D1DB6C0B6006F72E8 /* iDidMoveToView.swift in Sources */,
->>>>>>> origin/1
 				C126D63B1DB6C072006F72E8 /* GameScene.swift in Sources */,
 				C1CB9D291DBC49F600469C72 /* iUpdate.swift in Sources */,
 				C126D6401DB6C58F006F72E8 /* util.swift in Sources */,
@@ -440,6 +429,7 @@
 				C1CB9D211DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1F730451DB95FEF0032AAC8 /* Nodes.swift in Sources */,
 				C126D6441DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */,
+				C1CB9D2D1DBC55D900469C72 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1FD5C9E1DBAA51000D45E45 /* labelButton.swift in Sources */,
 				C1E621501DB6D29A001EE3B3 /* util.swift in Sources */,
-				C1FD5C9F1DBAAD8800D45E45 /* didMoveToView.swift in Sources */,
 				C1248BD81DB6B8A400C92913 /* main.swift in Sources */,
 				C1F730491DB960360032AAC8 /* GloVars.swift in Sources */,
+				C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D221DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */,
 				C1CB9D261DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
@@ -467,16 +456,11 @@
 				C14B9FCC1DB6B17E00C954C7 /* GameViewController.swift in Sources */,
 				C126D6411DB6C669006F72E8 /* util.swift in Sources */,
 				C14B9FC61DB6B17E00C954C7 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
-				C1FD5C9C1DBAA51000D45E45 /* labelButton.swift in Sources */,
-				C126D6431DB6C7B0006F72E8 /* touchesBegan.swift in Sources */,
-				C126D63E1DB6C0BB006F72E8 /* didMoveToView.swift in Sources */,
-=======
 				C1CB9D241DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
 				C126D6431DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */,
 				C126D63E1DB6C0BB006F72E8 /* iDidMoveToView.swift in Sources */,
+				C1CB9D2C1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D281DBC49F600469C72 /* iUpdate.swift in Sources */,
->>>>>>> origin/1
 				C1F730471DB9601D0032AAC8 /* GloVars.swift in Sources */,
 				C1F7303B1DB957C10032AAC8 /* Nodes.swift in Sources */,
 				C1CB9D201DBC45C300469C72 /* iTouchesMoved.swift in Sources */,

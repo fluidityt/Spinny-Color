@@ -20,15 +20,9 @@ final internal class GameScene: SKScene {
 		// macOS specific initials:
 		let location = theEvent.locationInNode(self)
 		let time_at_began = theEvent.timestamp
-<<<<<<< HEAD
-		
-		iTouchesBegan(location, timeAtBegan: time_at_began)
-		
-=======
 
 		_iTouchesBegan(location, timeAtBegan: time_at_began)
 
->>>>>>> origin/1
 	}
 
 	override func update(currentTime: CFTimeInterval) {

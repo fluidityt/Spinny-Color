@@ -17,18 +17,10 @@ public extension SKNode {
 	public func addToScene(scene: SKScene) {
 		scene.addChild(self)
 	}
-<<<<<<< HEAD
-	
-	public func moveTo(point: CGPoint, duration: NSTimeInterval) {
-		self.runAction(SKAction.moveTo(point, duration: duration))
-	}
-	
-=======
 
 	public func moveTo(location: CGPoint, duration: NSTimeInterval) {
 		self.runAction(SKAction.moveTo(location, duration: duration))
 	}
->>>>>>> origin/1
 }
 
 		// MARK: Scene:
@@ -66,8 +58,6 @@ public func centerOf(view view: SKView) -> CGPoint {
 		// MARK: View:
 
 		// MARK: Points:
-
-func point(location: CGPoint) -> String {	return "\(Int(location.x)), \(Int(location.y))"}
 
 func point(x: CGFloat,_ y: CGFloat) -> CGPoint { return CGPoint(x: x, y: y) }
 

@@ -50,11 +50,6 @@ internal struct Nodes {
 		LABEL: do {
 			label = SKLabelNode(text: "Hey there")
 		label.addToScene(scene)
-<<<<<<< HEAD
-		label.position = centerOf(scene: scene)
-
-=======
 		}
->>>>>>> origin/1
 	}
 }
