@@ -63,19 +63,20 @@ let lab = SKLabelNode(text: "Hey there my name is what")
 let bkg = SKLabelNode(text: "Hey I'm a rectangle")
 
 
-func _resize() {
+/// Sets scale of label to constrain inside rectangle
+func _resize() {	// << TODO: Add offset >>
 	
+	// Aspect ratio (assumes landscape text):
+	let aspect_ratio = (lab.frame.width / lab.frame.height) // ... to 1
 	
 	// Early return:
-	if lab.frame
+	if (lab.frame.width == bkg.frame.width) && (lab.frame.height == bkg.frame.height) {	return }
 	
-	// Our logic stuff:
+	
+	/** Testing: */	print("INItIAL VALUE: \n");	printr([lab.frame, bkg.frame])
+	
+	// Logic stuff:
 	enum ShrinkScale { case shrink, expand, nothing }
-	
-	print("INItIAL VALUE: \n")
-	printr([lab.frame, bkg.frame])
-	
-	
 	let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
 		
 		let tolerance:CGFloat = 1						// Determines how exact we want our frame to fit
@@ -101,6 +102,7 @@ func _resize() {
 		return
 	}
 	
+	// Logic stuff:
 	let amount_to_scale: (width: CGFloat, height: CGFloat) = {
 		
 		let w: CGFloat, h: CGFloat	// Returners
