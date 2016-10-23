@@ -40,16 +40,16 @@ internal struct Nodes {
 
 		// Camera
 		CAMERA: do {
-		camera = SKCameraNode()
-		camera.addToScene(scene)
-		camera.position = centerOf(scene: scene)
-		scene.camera = camera
+			camera = SKCameraNode()
+			camera.addToScene(scene)
+			camera.position = centerOf(scene: scene)
+			scene.camera = camera
 		}
 
 		// Label
 		LABEL: do {
 			label = SKLabelNode(text: "Hey there")
-		label.addToScene(scene)
+			camera.addChild(label)
 		}
 	}
 }

@@ -12,12 +12,9 @@ import SpriteKit
 internal func iUpdate(currentTime: CFTimeInterval) {
 
 	// Glocals
-	let camera = gNodes!.camera
+	let	 _ 		= gNodes!.camera
 	let label = gNodes!.label
 	let move = gNodes!.move
-
-	// Move camera to label:
-	label.position = camera.position
 
 	// Hit detection:
 	hitDetect: do {
