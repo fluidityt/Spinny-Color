@@ -16,7 +16,7 @@ internal func iUpdate(currentTime: CFTimeInterval) {
 	let label = gNodes!.label
 	let move = gNodes!.move
 
-	// Hit detection:
+	// Hit detectiokn:
 	hitDetect: do {
 		let hittable_frames = [move.left.frame, move.right.frame]
 
