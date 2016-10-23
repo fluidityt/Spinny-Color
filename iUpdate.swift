@@ -16,6 +16,7 @@ internal func iUpdate(currentTime: CFTimeInterval) {
 	let label = gNodes!.label
 	let move = gNodes!.move
 
+
 	// Move camera to label:
 	label.position = camera.position
 
