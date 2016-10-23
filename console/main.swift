@@ -60,33 +60,51 @@ func printr(data: [CGRect]) { print("\(data)") }
 let lab = SKLabelNode(text: "Hey there my name is what")
 let bkg = SKLabelNode(text: "Hey I'm a rectangle")
 
-	
+
 enum ShrinkScale { case shrink, expand, nothing }
-let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale)
 
-/**/ // label is wider than frame -> shrink:
-/**/ if lab.frame.width > bkg.frame.width { shrink_or_scale.width = .shrink }
-/**/ // label is less wide than frame -> grow:
-/**/ else if lab.frame.width < bkg.frame.width { shrink_or_scale.width = .expand }
-/**/ // label is same width as frame -> do nothing:
-/**/ else { shrink_or_scale.width = .nothing }
+let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
+ 
+	let w: ShrinkScale, h:ShrinkScale
+	
+	// label is wider than frame -> shrink:
+	if lab.frame.width > bkg.frame.width { w = .shrink }
+		// label is less wide than frame -> grow:
+	else if lab.frame.width < bkg.frame.width { w = .expand }
+		// label is same width as frame -> do nothing:
+	else { w = .nothing }
+	
+	// label is taller than frame -> shrink:
+	if lab.frame.height > bkg.frame.height { h = .shrink }
+		// label is less tall than frame -> grow:
+	else if lab.frame.height < bkg.frame.height { h = .expand }
+		// label is same height as frame -> do nothing:
+	else { h = .nothing }
+	
+	return (w,h)
+}()
 
-/**/ // label is taller than frame -> shrink:
-/**/ if lab.frame.height > bkg.frame.height { shrink_or_scale.height = .shrink }
-/**/ // label is less tall than frame -> grow:
-/**/ else if lab.frame.height < bkg.frame.height { shrink_or_scale.height = .expand }
-/**/ // label is same height as frame -> do nothing:
-/**/ else { shrink_or_scale.height = .nothing }
+let amount_to_scale: (width: CGFloat, height: CGFloat) = {
+	
+	let w: CGFloat, h: CGFloat
+	
+	// We need to scale label's width by 0.XX:
+	if shrink_or_scale.width == .shrink {	w = lab.frame.width / bkg.frame.width	}
+	// We need to scale label's width by >1.00:
+	else if shrink_or_scale.width == .expand  {	w = bkg.frame.width / lab.frame.width	}
+	// We don't need to scale:
+	else { w = 1 }
+	
+	// We need to scale label's height by 0.XX:
+	if shrink_or_scale.height == .shrink {	h = lab.frame.height / bkg.frame.height	}
+	// We need to scale label's height by >1.00:
+	else if shrink_or_scale.height == .expand  {	h = bkg.frame.height / lab.frame.height	}
+	// We don't need to scale:
+	else { h = 1 }
+	
+	return (w,h)
+}()
 
-
-let amount_to_scale: (width: CGFloat, height: CGFloat)
-
-/**/ // We need to scale label's width by 0.XX:
-/**/ if shrink_or_scale.width == .shrink {	amount_to_scale.width = lab.frame.width / bkg.frame.width	}
-/**/ // We need to scale label's width by >1.00:
-/**/ else if shrink_or_scale.width == .expand  {	amount_to_scale.width = bkg.frame.width / lab.frame.width	}
-/**/ // We don't need to scale:
-/**/ else { amount_to_scale.width = 1 }
 
 print(bkg.frame.width)
 
