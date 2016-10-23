@@ -67,8 +67,16 @@ let bkg = SKLabelNode(text: "Hey I'm a rectangle")
 // FIXME: i need a logic module to determine tolerance / threshold or it will NEVER match 100%
 enum ShrinkScale { case shrink, expand, nothing }
 
-let break_loop: Bool
-while break_loop != true {
+print("INItIAL VALUE: \n")
+printr([lab.frame, bkg.frame])
+
+var boring = 0
+
+
+while 0==0 {
+	
+	boring += 1; if boring > 20 { break }; print("\n"); print (boring); 	print("\n")
+	
 	let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
 		
 		let tolerance:CGFloat = 5
@@ -92,31 +100,41 @@ while break_loop != true {
 		return (w,h)
 	}()
 	
+	// Break loop?:
+	if (shrink_or_scale.width == ShrinkScale.nothing)
+	&& (shrink_or_scale.height == ShrinkScale.nothing) {
+		break
+	}
+	
 	let amount_to_scale: (width: CGFloat, height: CGFloat) = {
 		
 		let w: CGFloat, h: CGFloat
 		
 		// We need to scale label's width by 0.XX:
-		if shrink_or_scale.width == .shrink {	w = lab.frame.width / bkg.frame.width	}
+		if shrink_or_scale.width == .shrink {	w = bkg.frame.width / lab.frame.width	}
 		// We need to scale label's width by >1.00:
-		else if shrink_or_scale.width == .expand  {	w = bkg.frame.width / lab.frame.width	}
+		else if shrink_or_scale.width == .expand  {	w = lab.frame.width / bkg.frame.width	}
 		// We don't need to scale:
 		else { w = 1 }
 		
 		// We need to scale label's height by 0.XX:
-		if shrink_or_scale.height == .shrink {	h = lab.frame.height / bkg.frame.height	}
+		if shrink_or_scale.height == .shrink {	h = bkg.frame.height / lab.frame.height	}
 		// We need to scale label's height by >1.00:
-		else if shrink_or_scale.height == .expand  {	h = bkg.frame.height / lab.frame.height	}
+		else if shrink_or_scale.height == .expand  {	h = lab.frame.height / bkg.frame.height	}
 		// We don't need to scale:
 		else { h = 1 }
 		
 		return (w,h)
 	}()
+	
+	// TODO: Figure out how to do with without warping the aspect ration
+	lab.xScale = lab.xScale * amount_to_scale.width
+	lab.yScale = lab.yScale * amount_to_scale.height
+	
+	// Testing:
+	printr([lab.frame, bkg.frame])
+	print(shrink_or_scale)
 }
-
-// Testing:
-printr([lab.frame, bkg.frame])
-print(shrink_or_scale)
 
 
 
