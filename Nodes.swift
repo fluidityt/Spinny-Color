@@ -8,17 +8,16 @@
 
 import SpriteKit
 
-// TODO: Error and nil checks
-// TODO: SK Constraints
 
 /// Handles initialization and calling of the global nodes
-struct Nodes {
+internal struct Nodes {
 	
 	let move: (left: SKSpriteNode,
 						right: SKSpriteNode),
 	
 	 camera: SKCameraNode,
 	 label: SKLabelNode
+
 		// bkg: SKSpriteNode
 	
 		//let framed: SKShapeNode
@@ -26,6 +25,7 @@ struct Nodes {
 	init(view: SKView, scene: SKScene) {
 		
 		// L/R
+		LR: do {
 		let left = SKSpriteNode(color: SKColor.blueColor(), size: CGSize(width: 100, height: 100))
 			let right = SKSpriteNode(color: SKColor.blackColor(), size: CGSize(width: 100, height: 100))
 		left.addToScene(scene)
@@ -36,16 +36,20 @@ struct Nodes {
 			right.position.x = scene.frame.maxX - right.frame.width/2
 		move.left = left
 			move.right = right
-		
+		}
+
 		// Camera
+		CAMERA: do {
 		camera = SKCameraNode()
 		camera.addToScene(scene)
 		camera.position = centerOf(scene: scene)
 		scene.camera = camera
-		
-		// Label
-		label = SKLabelNode(text: "Hey there")
-		label.addToScene(scene)
+		}
 
+		// Label
+		LABEL: do {
+			label = SKLabelNode(text: "Hey there")
+		label.addToScene(scene)
+		}
 	}
 }
