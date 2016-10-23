@@ -35,6 +35,9 @@
 		C1CB9D281DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
 		C1CB9D291DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
 		C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D271DBC49F600469C72 /* iUpdate.swift */; };
+		C1CB9D2C1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
+		C1CB9D2D1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
+		C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB9D2B1DBC55D900469C72 /* Button.swift */; };
 		C1E621471DB6CDA3001EE3B3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E621461DB6CDA3001EE3B3 /* main.swift */; };
 		C1E621501DB6D29A001EE3B3 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D63F1DB6C58F006F72E8 /* util.swift */; };
 		C1F7303B1DB957C10032AAC8 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303A1DB957C10032AAC8 /* Nodes.swift */; };
@@ -91,6 +94,7 @@
 		C1CB9D1F1DBC45C300469C72 /* iTouchesMoved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTouchesMoved.swift; sourceTree = "<group>"; };
 		C1CB9D231DBC45DE00469C72 /* iTouchesEnded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTouchesEnded.swift; sourceTree = "<group>"; };
 		C1CB9D271DBC49F600469C72 /* iUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iUpdate.swift; sourceTree = "<group>"; };
+		C1CB9D2B1DBC55D900469C72 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		C1E621441DB6CDA3001EE3B3 /* Build All Targets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Build All Targets"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E621461DB6CDA3001EE3B3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C1F7303A1DB957C10032AAC8 /* Nodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F7303A1DB957C10032AAC8 /* Nodes.swift */,
+				C1CB9D2B1DBC55D900469C72 /* Button.swift */,
 			);
 			name = structy;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				C1CB9D211DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1F730451DB95FEF0032AAC8 /* Nodes.swift in Sources */,
 				C126D6441DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */,
+				C1CB9D2D1DBC55D900469C72 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +440,7 @@
 				C1E621501DB6D29A001EE3B3 /* util.swift in Sources */,
 				C1248BD81DB6B8A400C92913 /* main.swift in Sources */,
 				C1F730491DB960360032AAC8 /* GloVars.swift in Sources */,
+				C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D221DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */,
 				C1CB9D261DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
@@ -452,6 +459,7 @@
 				C1CB9D241DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
 				C126D6431DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */,
 				C126D63E1DB6C0BB006F72E8 /* iDidMoveToView.swift in Sources */,
+				C1CB9D2C1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D281DBC49F600469C72 /* iUpdate.swift in Sources */,
 				C1F730471DB9601D0032AAC8 /* GloVars.swift in Sources */,
 				C1F7303B1DB957C10032AAC8 /* Nodes.swift in Sources */,
