@@ -63,66 +63,55 @@ let lab = SKLabelNode(text: "Hey there my name is what")
 let bkg = SKLabelNode(text: "Hey I'm a rectangle")
 
 
-// Our logic stuff:
-// FIXME: i need a logic module to determine tolerance / threshold or it will NEVER match 100%
-enum ShrinkScale { case shrink, expand, nothing }
-
-print("INItIAL VALUE: \n")
-printr([lab.frame, bkg.frame])
-
-var boring = 0
-
-
-while 0==0 {
+func _resize() {
 	
-	boring += 1; if boring > 20 { break }; print("\n"); print (boring); 	print("\n")
+	
+	// Early return:
+	if lab.frame
+	
+	// Our logic stuff:
+	enum ShrinkScale { case shrink, expand, nothing }
+	
+	print("INItIAL VALUE: \n")
+	printr([lab.frame, bkg.frame])
+	
 	
 	let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
 		
-		let tolerance:CGFloat = 5
+		let tolerance:CGFloat = 1						// Determines how exact we want our frame to fit
 		
-		let w: ShrinkScale, h:ShrinkScale
-		
-		// label is wider than frame -> shrink:
-		if lab.frame.width > (bkg.frame.width + tolerance) { w = .shrink }
-		// label is less wide than frame -> grow:
-		else if (lab.frame.width + tolerance) < bkg.frame.width { w = .expand }
-		// label is same width as frame -> do nothing:
-		else { w = .nothing }
-		
-		// label is taller than frame -> shrink:
-		if lab.frame.height > (bkg.frame.height + tolerance) { h = .shrink }
-		// label is less tall than frame -> grow:
-		else if (lab.frame.height + tolerance) < bkg.frame.height { h = .expand }
-		// label is same height as frame -> do nothing:
-		else { h = .nothing }
+		let w: ShrinkScale, h:ShrinkScale		// Return values
+	
+		// Width:
+		if lab.frame.width > (bkg.frame.width + tolerance) { w = .shrink }			// label is wider than frame -> shrink
+		else if (lab.frame.width + tolerance) < bkg.frame.width { w = .expand }	// label is less wide than frame -> grow
+		else { w = .nothing }																										// label is same width as frame -> do nothing
+	
+		// Height:
+		if lab.frame.height > (bkg.frame.height + tolerance) { h = .shrink }			// label is taller than frame -> shrink
+		else if (lab.frame.height + tolerance) < bkg.frame.height { h = .expand }	// label is less tall than frame -> grow
+		else { h = .nothing }																											// label is same height as frame -> do nothing
 		
 		return (w,h)
 	}()
 	
-	// Break loop?:
+	// Early return if no scale action needed...
 	if (shrink_or_scale.width == ShrinkScale.nothing)
-	&& (shrink_or_scale.height == ShrinkScale.nothing) {
-		break
+		&& (shrink_or_scale.height == ShrinkScale.nothing) {
+		return
 	}
 	
 	let amount_to_scale: (width: CGFloat, height: CGFloat) = {
 		
-		let w: CGFloat, h: CGFloat
+		let w: CGFloat, h: CGFloat	// Returners
 		
-		// We need to scale label's width by 0.XX:
-		if shrink_or_scale.width == .shrink {	w = bkg.frame.width / lab.frame.width	}
-		// We need to scale label's width by >1.00:
-		else if shrink_or_scale.width == .expand  {	w = lab.frame.width / bkg.frame.width	}
-		// We don't need to scale:
-		else { w = 1 }
+		if shrink_or_scale.width == .shrink 			{	w = bkg.frame.width / lab.frame.width	}		// We need to scale label's width by 0.XX
+		else if shrink_or_scale.width == .expand  {	w = lab.frame.width / bkg.frame.width	}		// We need to scale label's width by >1.00
+		else { w = 1 }																																				// We don't need to scale
 		
-		// We need to scale label's height by 0.XX:
-		if shrink_or_scale.height == .shrink {	h = bkg.frame.height / lab.frame.height	}
-		// We need to scale label's height by >1.00:
-		else if shrink_or_scale.height == .expand  {	h = lab.frame.height / bkg.frame.height	}
-		// We don't need to scale:
-		else { h = 1 }
+		if shrink_or_scale.height == .shrink 			 {	h = bkg.frame.height / lab.frame.height	}	// We need to scale label's height by 0.XX
+		else if shrink_or_scale.height == .expand  {	h = lab.frame.height / bkg.frame.height	}	// We need to scale label's height by >1.00
+		else { h = 1 }																																					// We don't need to scale
 		
 		return (w,h)
 	}()
@@ -135,7 +124,6 @@ while 0==0 {
 	printr([lab.frame, bkg.frame])
 	print(shrink_or_scale)
 }
-
 
 
 
