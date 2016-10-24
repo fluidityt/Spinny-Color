@@ -8,17 +8,22 @@
 
 import SpriteKit
 
+/// Simulates an SKNode so stfu about OOP
 final internal class Button {
 
-	/// The node that the label will sit in:
-	let background_node: SKShapeNode
+// MARK: - Internal:
 	
-	/// The label node:
-	let label_node: SKLabelNode
+	/// The node that the label will sit in (indirectly modified):
+	private let background_node: SKShapeNode
 	
-	/** Sets scale of label to constrain inside rectangle
-	- TODO: Add offset.	*/
-	func _resize() {
+	/// The label node (indirectly modified):
+	private let label_node: SKLabelNode
+	
+// MARK: - Resize:
+	
+	/// Sets scale of label to constrain inside rectangle
+	private func _resize() {
+		// TODO: Add offset
 		
 		// Clarity:
 		let label  = self.label_node.frame
@@ -44,14 +49,14 @@ final internal class Button {
 			let w: ShrinkScale, h:ShrinkScale
 		
 			// Width:
-			if label.width > (target.width + tolerance) { w = .shrink }														// label is wider than frame -> shrink
-			else if (label.width + tolerance) < target.width { w = .expand }											// label is less wide than frame -> grow
-			else { w = .nothing }																																	// label is same width as frame -> do nothing
+			if label.width > (target.width + tolerance) { w = .shrink }													// label is wider than frame -> shrink
+			else if (label.width + tolerance) < target.width { w = .expand }										// label is less wide than frame -> grow
+			else { w = .nothing }																																// label is same width as frame -> do nothing
 		
 			// Height:
-			if label.height > (target.height + tolerance) { h = .shrink }													// label is taller than frame -> shrink
-			else if (label.height + tolerance) < target.height { h = .expand }										// label is less tall than frame -> grow
-			else { h = .nothing }																																	// label is same height as frame -> do nothing
+			if label.height > (target.height + tolerance) { h = .shrink }												// label is taller than frame -> shrink
+			else if (label.height + tolerance) < target.height { h = .expand }									// label is less tall than frame -> grow
+			else { h = .nothing }																																// label is same height as frame -> do nothing
 			
 			return (w,h)
 		}()
@@ -89,11 +94,13 @@ final internal class Button {
 												 y: target.height / label.height);
 				magnitude.x < magnitude.y ?
 					nodeScale(self.label_node, amount: magnitude.x) : nodeScale(self.label_node, amount: magnitude.y)
-			
-			// Move on to next switch block:
-			default: ()
+		
+			// Shouldn't be called:
+			default: print("ERROR in _resize().. no case found")
 		}
 	}
+	
+// MARK: - Accessible properties:
 	
 	/// Update bkg position, then move label to it:
 	var position: CGPoint {		didSet {	background_node.position = self.position } }				// Updates both nodes' position
@@ -105,7 +112,11 @@ final internal class Button {
 			_resize()
 		}
 	}
+	
+	/// Clicks
+	var code:() = ()
 
+	// MARK: - Accessible funcs:
 	/// Resizes background, then adjusts
 	func scale(amount: CGFloat) {		nodeScale(self.background_node, amount: amount) }
 	
@@ -130,5 +141,12 @@ final internal class Button {
 		self.text = text
 		
 		_resize()
+	}
+	
+	// MARK: Static:
+	
+	/// Stuff
+	static func checkForAndHandleClicks() -> Bool {
+		return false
 	}
 }
