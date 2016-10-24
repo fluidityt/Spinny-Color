@@ -10,14 +10,21 @@ import SpriteKit
 let n = "\n"
 
 /*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
-															// MARK: Button
+															// MARK: Butt`on
 /*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
+public func printF(node: SKNode) {
+	 print(node.name, Int(node.frame.width), Int(node.frame.height))
+}
+
+public func printF(frame: CGRect) {
+	 print(Int(frame.width), Int(frame.height))
+}
 
 	public func nodeScale(node: SKNode, amount: CGFloat) {
-		print("HEY", node.frame)
+		print("::::::HEY  :", Int(node.frame.width), Int(node.frame.height))
 		node.xScale = node.xScale * amount
 		node.yScale = node.yScale * amount
-		print("HEY2", node.frame)
+		print("::::::HEY2 :", Int(node.frame.width), Int(node.frame.height))
 	}
 
 final internal class Button2 {
@@ -82,13 +89,14 @@ final internal class Button2 {
 	*/
 	func _resize() {
 		
+		var counterr = 0; while counterr != 2 { counterr += 1
 		// Clarity:
 		let label  = self.label_node.frame
 		let target =  self.background_node.frame
 		
-	/** Testing: */	defer {	print(n, "After.. label and label aspect.. ",n);printr([label_node.frame]);print(label_node.frame.width / label_node.frame.height)	}
-	/** Testing: */	print(n,n,"~~~~~Entering resize..  VALUE: BKG , LAB \n");	printr([target, label])
-	/** Testing: */ print(n,"Aspect ratios: ",n ); print ("bkg: ",target.width / target.height, n);print("lab: ",label.width / label.height, n,n)
+	/** Testing: */	defer {	print(n, "After.. label and label aspect.. ",n);printF(label_node);print(round(label_node.frame.width / label_node.frame.height))	}
+	/** Testing: */	print(n,n,"~~~~~Entering resize.\(counterr).  VALUE: BKG , LAB \n");	printF(target); printF(label)
+	/** Testing: */ print(n,"Aspect ratios: ",n ); print ("bkg: ", round(target.width / target.height), n);print("lab: ", round(label.width / label.height), n,n)
 
 		// Early return:
 		if (label.width == target.width) && (label.height == target.height) {	return }
@@ -131,15 +139,15 @@ final internal class Button2 {
 				let magnitude = ( x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are less than 1
 													y: target.height / label.height);
 				magnitude.x > magnitude.y ?
-					self.label_node.scale(magnitude.x) : self.label_node.scale(magnitude.y)
+					nodeScale(self.label_node, amount: magnitude.x) : nodeScale(self.label_node, amount: magnitude.y)
 				return
 			
 			// Handle case of a expand... multiply by SMALLEST number:
 			case (.expand, .expand):
 				let magnitude = (x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are greater than 1
 												 y: target.height / label.height);
-				magnitude.x > magnitude.y ?
-					self.label_node.scale(magnitude.x) : self.label_node.scale(magnitude.y)
+				magnitude.x < magnitude.y ?
+					nodeScale(self.label_node, amount: magnitude.x) : nodeScale(self.label_node, amount: magnitude.y)
 				return
 		
 			// Move on to next switch block:
@@ -149,13 +157,13 @@ final internal class Button2 {
 		// Handle shrinks:
 		switch (shrink_or_scale.width, shrink_or_scale.height) {
 			case (.shrink, .expand) , (.shrink, .nothing):
-				self.label_node.xScale = self.label_node.xScale*(target.width/label.width)
-				self.label_node.scale(target.width  / label.width)
-
+				nodeScale(self.label_node, amount: target.width  / label.width)
 			case (.expand, .shrink) , (.nothing, .shrink):
-				self.label_node.scale(target.height / label.height)
+				nodeScale(self.label_node, amount: target.height / label.height)
 			default:
 				()
+		
+			}
 		}
 	}
 }
@@ -169,7 +177,7 @@ func printr(data: [CGRect]) { for dat in data {print("\(dat.width,dat.height) \n
 
 testing: do {
 
-	var button = Button2(size: CGSize(width: 200, height: 100), text: "hey  there")
+	var button = Button2(size: CGSize(width: 65, height: 15), text: "hey  there")
 	
 	button.text = "OMG22222"
 }
