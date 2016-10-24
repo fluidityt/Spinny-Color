@@ -10,6 +10,19 @@
 
 import SpriteKit
 
+public func printF(node: SKNode) {
+	 print(node.name, Int(node.frame.width), Int(node.frame.height))
+}
+
+public func printF(frame: CGRect) {
+	 print(Int(frame.width), Int(frame.height))
+}
+
+public func nodeScale(node: SKNode, amount: CGFloat) {
+		node.xScale = node.xScale * amount
+		node.yScale = node.yScale * amount
+}
+
 		// MAKRK: SKNode:
 
 public extension SKNode {
@@ -22,6 +35,10 @@ public extension SKNode {
 		self.runAction(SKAction.moveTo(location, duration: duration))
 	}
 	
+	public func scale(amount: CGFloat) {
+		self.xScale = self.xScale * amount
+		self.yScale = self.yScale * amount
+	}
 }
 
 		// MARK: Scene:
@@ -77,4 +94,63 @@ public func makeLabel(text: String, position: CGPoint) {
 	__		 .position = position
 	__		 .addToScene(gScene!)
 }
+
+
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
+															// MARK: Another func?
+/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
+
+/// This can be used to force a frame to stretc to a box..
+func forceFit() {
+	/*
+	// Aspect ratio (assumes landscape text):
+	let bkg_AR = (bkg.frame.width / bkg.frame.height) 																		// to 1
+	let lab_AR = (lab.frame.width / lab.frame.height) // to 1
+	
+	// Logic stuff .. force fit to 100% of the bkg
+	let amount_to_scale: (width: CGFloat, height: CGFloat) = {
+		
+		let w: CGFloat, h: CGFloat	// Returners
+		
+		if shrink_or_scale.width == .shrink 			{	w = max.width / lab.frame.width	}		// We need to scale label's width by 0.XX
+		else if shrink_or_scale.width == .expand  {	w = lab.frame.width / bkg.frame.width	}		// We need to scale label's width by >1.00
+		else { w = 1 }																																				// We don't need to scale
+		
+		if shrink_or_scale.height == .shrink 			 {	h = bkg.frame.height / lab.frame.height	}	// We need to scale label's height by 0.XX
+		else if shrink_or_scale.height == .expand  {	h = lab.frame.height / bkg.frame.height	}	// We need to scale label's height by >1.00
+		else { h = 1 }																																					// We don't need to scale
+		
+		return (w,h)
+	}()
+	
+	// Scrunch / expand to fit exactly:
+	lab.xScale = lab.xScale * amount_to_scale.width
+	lab.yScale = lab.yScale * amount_to_scale.height
+	
+		// TODO: Check for negative or less than 1 value
+	let new_aspect_ratio = (lab.frame.width / lab.frame.height)
+	
+	// Make a new "frame" to resize again to:
+	// .. difference in aspect ratio.. if > shrink, if < expand
+	
+	// How to find longest , tallest label, that is proper aspect AND fits inside bkg
+	
+	// never lose the original ratio...
+	// if one result is too big, then the only operation that can be performed is shrink
+	// if both are too small, then expand both sides only by the shortest.
+	
+	
+	/*
+				_________________
+				|		 _______	  |
+				|		 |_____|	  |
+				|_______________|
+				x = 2, y = 2
+	
+
+	*/
+*/
+}
+
+
 
