@@ -180,10 +180,20 @@ testing: do {
 	print("Shrinkx2") // working
 	var button = Button2(size: CGSize(width: 65, height: 15), text: "hey  fffffffffffffffffthere")
 	
-	print("expandx2") // working
+	print("expandx2 for X") // working
 	button.text = "OMG22222"
 	
+	print("shrink, expand") // working
+	button.text = "zzzzzzzzzzzzz 333333333333333333333"
 	
+	print("expand, shrink") // working
+	var button2 = Button2(size: CGSize(width: 65, height: 1), text: "hey  ")
+	
+	print("nothing, expand") // working
+	button.text = "zzzzzzzzzzzzz 333333333333333333333"
+
+	print(" expandx2 for Y") // working
+	button.text = "z"
 }
 
 
