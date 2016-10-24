@@ -129,10 +129,13 @@ final internal class Button {
 	
 // MARK: Static:
 	
-	/// Increases :)
+	/// Increases :) For finding touches and matching to clicks:
 	static var number_of_buttons = 0
 	
-	/// Stuff
+	/// Keeps track! For clicking:
+	static var dictionary = [Int: Button]()
+	
+	/// Handles all the grunt work from the last 2:
 	static func checkForAndHandleClicks() -> Bool {
 		return false
 	}
@@ -162,7 +165,10 @@ final internal class Button {
 		self.id = Button.number_of_buttons
 		self.background_node.name = "Button # \(self.id)"
 		
+		// For clicking:
+		Button.dictionary[self.id] = self
+		
 		// Make it fit!
 		self._resize()
-	}	
+	}
 }
