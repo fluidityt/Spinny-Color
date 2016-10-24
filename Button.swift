@@ -19,6 +19,9 @@ final internal class Button {
 	/// The label node (indirectly modified):
 	private let label_node: SKLabelNode
 	
+	/// Our button ID (will become bkg_node name
+	private let id: Int
+	
 // MARK: - Resize:
 	
 	/// Sets scale of label to constrain inside rectangle
@@ -114,14 +117,27 @@ final internal class Button {
 	}
 	
 	/// Clicks
-	var code:() = ()
+	var on_click: () = ()
 
-	// MARK: - Accessible funcs:
+// MARK: - Accessible funcs:
+
 	/// Resizes background, then adjusts
 	func scale(amount: CGFloat) {		nodeScale(self.background_node, amount: amount) }
 	
 	/// Add to scene...
 	func addToScene(scene: SKScene) {	self.background_node.addToScene(scene) }
+	
+// MARK: Static:
+	
+	/// Increases :)
+	static var number_of_buttons = 0
+	
+	/// Stuff
+	static func checkForAndHandleClicks() -> Bool {
+		return false
+	}
+	
+// MARK: Init:
 	
 	/** Basic init
 	
@@ -129,24 +145,24 @@ final internal class Button {
 		self.pos-> bkg.pos-> label.pos->
 		self.txt-> label.txt-> label.scale()	*/
 	init(size: CGSize, text: String) {
+
 		
-		// Initialize nodes:
+		// Node stuff:
 		self.background_node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
 		self.label_node = SKLabelNode(text: text)
 		self.background_node.addChild(self.label_node)
 		
-		// Initialize properties:
+		// Property stuff:
 		self.position = CGPoint(x:0,y:0)
 		self.text = ""
 		self.text = text
 		
-		_resize()
-	}
-	
-	// MARK: Static:
-	
-	/// Stuff
-	static func checkForAndHandleClicks() -> Bool {
-		return false
-	}
+		// ID assignment:
+		Button.number_of_buttons += 1
+		self.id = Button.number_of_buttons
+		self.background_node.name = "Button # \(self.id)"
+		
+		// Make it fit!
+		self._resize()
+	}	
 }
