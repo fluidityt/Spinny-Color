@@ -25,7 +25,7 @@ final internal class Button {
 // MARK: - Resize:
 	
 	/// Sets scale of label to constrain inside rectangle
-	private func _resize() {
+	private func _resize() {																																// Used in init() and .text property
 		// TODO: Add offset
 		
 		// Clarity:
