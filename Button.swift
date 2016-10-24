@@ -168,7 +168,10 @@ final internal class Button {
 		// For clicking:
 		Button.dictionary[self.id] = self
 		
-		// Make it fit!
+		// Make it fit! (lol)
 		self._resize()
 	}
 }
+
+NEXT I AM GOING TO IMPLEMENT THE DISCOVERY AND CLICK FUNCTION
+CHECK THE NODEAT LOCATION'S NAME AND MATCH IT TO THE DICTIONARY KEY THEN RUN THE VALUE'S .ON_CLICK
