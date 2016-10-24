@@ -89,13 +89,13 @@ final internal class Button2 {
 	*/
 	func _resize() {
 		
-		var counterr = 0; while counterr != 2 { counterr += 1
+	
 		// Clarity:
 		let label  = self.label_node.frame
 		let target =  self.background_node.frame
 		
 	/** Testing: */	defer {	print(n, "After.. label and label aspect.. ",n);printF(label_node);print(round(label_node.frame.width / label_node.frame.height))	}
-	/** Testing: */	print(n,n,"~~~~~Entering resize.\(counterr).  VALUE: BKG , LAB \n");	printF(target); printF(label)
+	/** Testing: */	print(n,n,"~~~~~Entering resize..  VALUE: BKG , LAB \n");	printF(target); printF(label)
 	/** Testing: */ print(n,"Aspect ratios: ",n ); print ("bkg: ", round(target.width / target.height), n);print("lab: ", round(label.width / label.height), n,n)
 
 		// Early return:
@@ -134,11 +134,11 @@ final internal class Button2 {
 			case (.nothing, .nothing):
 				return
 			
-			// Handle case of a shrink... multiply by LARGEST number:
+			// Handle case of a shrink... multiply by SMALLEST number:
 			case (.shrink, .shrink):
 				let magnitude = ( x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are less than 1
 													y: target.height / label.height);
-				magnitude.x > magnitude.y ?
+				magnitude.x < magnitude.y ?
 					nodeScale(self.label_node, amount: magnitude.x) : nodeScale(self.label_node, amount: magnitude.y)
 				return
 			
@@ -165,7 +165,7 @@ final internal class Button2 {
 		
 			}
 		}
-	}
+	
 }
 
 /*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
@@ -177,9 +177,13 @@ func printr(data: [CGRect]) { for dat in data {print("\(dat.width,dat.height) \n
 
 testing: do {
 
-	var button = Button2(size: CGSize(width: 65, height: 15), text: "hey  there")
+	print("Shrinkx2") // working
+	var button = Button2(size: CGSize(width: 65, height: 15), text: "hey  fffffffffffffffffthere")
 	
+	print("expandx2") // working
 	button.text = "OMG22222"
+	
+	
 }
 
 
