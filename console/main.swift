@@ -17,13 +17,13 @@ let n = "\n"
 final internal class Button2 {
 
 	// Indirectly controlled nodes:
-	let background: SKShapeNode
-	let label: SKLabelNode
+	let background_node: SKShapeNode
+	let label_node: SKLabelNode
 
 	/// Update bkg position, then move label to it:
 	var position: CGPoint {
 		didSet {
-			background.position = self.position
+			background_node.position = self.position
 			// Should auto update.. // label.position = background.position
 		}
 	}
@@ -31,13 +31,17 @@ final internal class Button2 {
 	/// Updates label text, then resizes to fit inside bkg:
 	var text: String {
 		didSet {
-
+			
+			self.label_node.text = text
+			
+			_resize()
+			
 		}
 	}
 
 	/// Resizes background, then adjusts
 	func setScale(scale: CGFloat) {
-		self.background.setScale(scale) 	// Update our bkg
+		self.background_node.setScale(scale) 	// Update our bkg
 		// Shouldn't need to resize // self.text = self.text + "" 				// Trigger resize
 	}
 	
@@ -50,14 +54,97 @@ final internal class Button2 {
 	init(size: CGSize, text: String) {
 		
 		// Initialize nodes:
-		self.background = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-		self.label = SKLabelNode(text: text)
-		self.background.addToScene(gScene!)
-		self.background.addChild(self.label)
+		self.background_node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+		self.label_node = SKLabelNode(text: text)
+		self.background_node.addChild(self.label_node)
+		self.background_node.addToScene(SKScene(size: CGSize(width: 400, height: 400)))	// This might fail
 		
 		// Initialize properties:
 		self.position = CGPoint(x:0,y:0)
+		self.text = ""
 		self.text = text
+		
+		_resize()
+	}
+	
+	/** Sets scale of label to constrain inside rectangle
+	- TODO: Add offset.
+	*/
+	func _resize() {
+		
+		// Clarity:
+		let label  = self.label_node.frame
+		let target =  self.background_node.frame
+		
+	/** Testing: */	defer {	print(n, "After.. label and label aspect.. ",n);printr([label_node.frame]);print(label_node.frame.width / label_node.frame.height)	}
+	/** Testing: */	print(n,n,"~~~~~Entering resize..  VALUE: BKG , LAB \n");	printr([target, label])
+	/** Testing: */ print(n,"Aspect ratios: ",n ); print ("bkg: ",target.width / target.height, n);print("lab: ",label.width / label.height, n,n)
+
+		// Early return:
+		if (label.width == target.width) && (label.height == target.height) {	return }
+		
+		// Logic stuff:
+		enum ShrinkScale { case shrink, expand, nothing }
+		let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
+			
+			// Determines how exact we want our frame to fit:
+			let tolerance:CGFloat = 1
+			
+			// Return / Assign values:
+			let w: ShrinkScale, h:ShrinkScale
+		
+			// Width:
+			if label.width > (target.width + tolerance) { w = .shrink }														// label is wider than frame -> shrink
+			else if (label.width + tolerance) < target.width { w = .expand }											// label is less wide than frame -> grow
+			else { w = .nothing }																																	// label is same width as frame -> do nothing
+		
+			// Height:
+			if label.height > (target.height + tolerance) { h = .shrink }													// label is taller than frame -> shrink
+			else if (label.height + tolerance) < target.height { h = .expand }										// label is less tall than frame -> grow
+			else { h = .nothing }																																	// label is same height as frame -> do nothing
+			
+			return (w,h)
+		}()
+		
+	/** Testing: */ print("What to do with label X: ", shrink_or_scale.width,n)
+	/** Testing: */print("What to do with label Y: ",  shrink_or_scale.height, "\n")
+		
+		// Handle double cases (scale, then return)
+		switch (shrink_or_scale.width, shrink_or_scale.height) {
+			
+			// Early return if no scale action needed:
+			case (.nothing, .nothing):
+				return
+			
+			// Handle case of a shrink... multiply by LARGEST number:
+			case (.shrink, .shrink):
+				let magnitude = ( x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are less than 1
+													y: target.height / label.height);
+				magnitude.x > magnitude.y ?
+					self.label_node.setScale(magnitude.x) : self.label_node.setScale(magnitude.y)
+				return
+			
+			// Handle case of a expand... multiply by SMALLEST number:
+			case (.expand, .expand):
+				let magnitude = (x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are greater than 1
+												 y: target.height / label.height);
+				magnitude.x > magnitude.y ?
+					self.label_node.setScale(magnitude.x) : self.label_node.setScale(magnitude.y)
+				return
+		
+			// Move on to next switch block:
+			default: ()
+		}
+
+		// Handle shrinks:
+		switch (shrink_or_scale.width, shrink_or_scale.height) {
+			case (.shrink, .expand) , (.shrink, .nothing):
+				self.label_node.setScale(target.width  / label.width)
+			case (.expand, .shrink) , (.nothing, .shrink):
+				self.label_node.setScale(target.height / label.height)
+			default:
+				()
+		}
 	}
 }
 
@@ -68,95 +155,18 @@ final internal class Button2 {
 // Convenience:
 func printr(data: [CGRect]) { for dat in data {print("\(dat.width,dat.height) \n")} }
 
-// Set frame sizes:
-let lab = SKLabelNode(text: "Hey there my name is what")
-let bkg = SKLabelNode(text: "Hey I'm a rectangle")
+testing: do {
 
-
-/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
-															// MARK: resize()
-/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
-
-/** Sets scale of label to constrain inside rectangle
-- TODO: Add offset.
-*/
-func _resize() {
+	var button = Button2(size: CGSize(width: 200, height: 100), text: "hey  there")
 	
-	// Clarity:
-	let label  = lab.frame
-	let target =  bkg.frame
-
-/** Testing: */	print("INItIAL VALUE: BKG , LAB \n");	printr([label, bkg.frame])
-/** Testing: */ print(n,"Aspect ratios: ",n ); print ("bkg: ",bkg.frame.width / bkg.frame.height, n);print("lab: ",lab.frame.width / lab.frame.height, n,n)
-
-	// Early return:
-	if (label.width == target.width) && (label.height == target.height) {	return }
-	
-	// Logic stuff:
-	enum ShrinkScale { case shrink, expand, nothing }
-	let shrink_or_scale: (width: ShrinkScale, height: ShrinkScale) = {
-		
-		// Determines how exact we want our frame to fit:
-		let tolerance:CGFloat = 1
-		
-		// Return / Assign values:
-		let w: ShrinkScale, h:ShrinkScale
-	
-		// Width:
-		if label.width > (target.width + tolerance) { w = .shrink }														// label is wider than frame -> shrink
-		else if (label.width + tolerance) < target.width { w = .expand }											// label is less wide than frame -> grow
-		else { w = .nothing }																																	// label is same width as frame -> do nothing
-	
-		// Height:
-		if label.height > (target.height + tolerance) { h = .shrink }													// label is taller than frame -> shrink
-		else if (label.height + tolerance) < target.height { h = .expand }										// label is less tall than frame -> grow
-		else { h = .nothing }																																	// label is same height as frame -> do nothing
-		
-		return (w,h)
-	}()
-	
-/** Testing: */ print("What to do with label X: ", shrink_or_scale.width,n)
-/** Testing: */print("What to do with label Y: ",  shrink_or_scale.height, "\n")
-	
-	// Handle double cases (scale, then return)
-	switch (shrink_or_scale.width, shrink_or_scale.height) {
-		
-		// Early return if no scale action needed:
-		case (.nothing, .nothing):
-			return
-		
-		// Handle case of a shrink... multiply by LARGEST number:
-		case (.shrink, .shrink):
-			let magnitude = ( x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are less than 1
-											  y: target.height / label.height);
-			magnitude.x > magnitude.y ? lab.setScale(magnitude.x) : lab.setScale(magnitude.y)
-			return
-		
-		// Handle case of a expand... multiply by SMALLEST number:
-		case (.expand, .expand):
-			let magnitude = (x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are greater than 1
-											 y: target.height / label.height);
-			magnitude.x > magnitude.y ? lab.setScale(magnitude.x) : lab.setScale(magnitude.y)
-			return
-	
-		// Move on to next switch block:
-		default: ()
-	}
-
-	// Handle shrinks:
-	switch (shrink_or_scale.width, shrink_or_scale.height) {
-		case (.shrink, .expand) , (.shrink, .nothing):
-			lab.setScale(target.width  / label.width)
-		case (.expand, .shrink) , (.nothing, .shrink):
-			lab.setScale(target.height / label.height)
-		default:
-			()
-	}
-
-/** Testing: */	defer {	print(n, "After.. label and label aspect.. ",n);printr([lab.frame]);print(lab.frame.width / lab.frame.height)	}
+	button.text = "OMG22222"
 }
 
-_resize()
+
+
+
+
+
 
 /// This can be used to force a frame to stretc to a box..
 func forceFit() {
@@ -209,6 +219,10 @@ func forceFit() {
 	*/
 */
 }
+
+
+
+
 
 
 print("\n")
