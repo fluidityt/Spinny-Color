@@ -29,3 +29,6 @@ internal var
 internal struct System2 {}
 
 
+let n = "\n"
+
+

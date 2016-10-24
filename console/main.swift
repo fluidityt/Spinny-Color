@@ -4,14 +4,8 @@
 //
 //  Created by Dude Guy  on 10/18/16.
 //
-//
 
 import SpriteKit
-let n = "\n"
-
-/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
-															// MARK: Button
-/*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
 final internal class Button2 {
 
@@ -112,7 +106,7 @@ final internal class Button2 {
 	}
 
 	/// Resizes background, then adjusts
-	func scale(amount: CGFloat) {		nodeScale(self.background_node, amount: amount) }				
+	func scale(amount: CGFloat) {		nodeScale(self.background_node, amount: amount) }
 	
 	/// Add to scene...
 	func addToScene(scene: SKScene) {	self.background_node.addToScene(scene) }
