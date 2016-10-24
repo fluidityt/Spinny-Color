@@ -13,6 +13,12 @@ let n = "\n"
 															// MARK: Button
 /*\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
+	public func nodeScale(node: SKNode, amount: CGFloat) {
+		print("HEY", node.frame)
+		node.xScale = node.xScale * amount
+		node.yScale = node.yScale * amount
+		print("HEY2", node.frame)
+	}
 
 final internal class Button2 {
 
@@ -40,16 +46,21 @@ final internal class Button2 {
 	}
 
 	/// Resizes background, then adjusts
-	func setScale(scale: CGFloat) {
-		self.background_node.setScale(scale) 	// Update our bkg
+	func scale(amount: CGFloat) {
+		nodeScale(self.background_node, amount: amount) 	// Update our bkg
 		// Shouldn't need to resize // self.text = self.text + "" 				// Trigger resize
+	}
+	
+	/// Add to scene...
+	func addToScene(scene: SKScene) {
+		self.background_node.addToScene(scene)
 	}
 	
 	/** Basic init
 	
 		Background();Label()
 		self.pos-> bkg.pos-> label.pos->
-		self.txt-> label.txt-> label.setScale()
+		self.txt-> label.txt-> label.scale()
 	*/
 	init(size: CGSize, text: String) {
 		
@@ -57,7 +68,6 @@ final internal class Button2 {
 		self.background_node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
 		self.label_node = SKLabelNode(text: text)
 		self.background_node.addChild(self.label_node)
-		self.background_node.addToScene(SKScene(size: CGSize(width: 400, height: 400)))	// This might fail
 		
 		// Initialize properties:
 		self.position = CGPoint(x:0,y:0)
@@ -121,7 +131,7 @@ final internal class Button2 {
 				let magnitude = ( x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are less than 1
 													y: target.height / label.height);
 				magnitude.x > magnitude.y ?
-					self.label_node.setScale(magnitude.x) : self.label_node.setScale(magnitude.y)
+					self.label_node.scale(magnitude.x) : self.label_node.scale(magnitude.y)
 				return
 			
 			// Handle case of a expand... multiply by SMALLEST number:
@@ -129,7 +139,7 @@ final internal class Button2 {
 				let magnitude = (x: target.width  / label.width,																		// TODO: Make sure that both of these numbers are greater than 1
 												 y: target.height / label.height);
 				magnitude.x > magnitude.y ?
-					self.label_node.setScale(magnitude.x) : self.label_node.setScale(magnitude.y)
+					self.label_node.scale(magnitude.x) : self.label_node.scale(magnitude.y)
 				return
 		
 			// Move on to next switch block:
@@ -139,9 +149,11 @@ final internal class Button2 {
 		// Handle shrinks:
 		switch (shrink_or_scale.width, shrink_or_scale.height) {
 			case (.shrink, .expand) , (.shrink, .nothing):
-				self.label_node.setScale(target.width  / label.width)
+				self.label_node.xScale = self.label_node.xScale*(target.width/label.width)
+				self.label_node.scale(target.width  / label.width)
+
 			case (.expand, .shrink) , (.nothing, .shrink):
-				self.label_node.setScale(target.height / label.height)
+				self.label_node.scale(target.height / label.height)
 			default:
 				()
 		}

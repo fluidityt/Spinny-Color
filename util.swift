@@ -21,6 +21,7 @@ public extension SKNode {
 	public func moveTo(location: CGPoint, duration: NSTimeInterval) {
 		self.runAction(SKAction.moveTo(location, duration: duration))
 	}
+	
 }
 
 		// MARK: Scene:
