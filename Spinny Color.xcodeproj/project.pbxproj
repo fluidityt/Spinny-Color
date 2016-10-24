@@ -21,6 +21,7 @@
 		C126D6411DB6C669006F72E8 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D63F1DB6C58F006F72E8 /* util.swift */; };
 		C126D6431DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D6421DB6C7B0006F72E8 /* iTouchesBegan.swift */; };
 		C126D6441DB6C7B0006F72E8 /* iTouchesBegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C126D6421DB6C7B0006F72E8 /* iTouchesBegan.swift */; };
+		C1465B1B1DBDC5BF00589B4C /* button test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1465B1A1DBDC5BF00589B4C /* button test.swift */; };
 		C14B9FC61DB6B17E00C954C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B9FC51DB6B17E00C954C7 /* AppDelegate.swift */; };
 		C14B9FCA1DB6B17E00C954C7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B9FC91DB6B17E00C954C7 /* GameScene.swift */; };
 		C14B9FCC1DB6B17E00C954C7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B9FCB1DB6B17E00C954C7 /* GameViewController.swift */; };
@@ -84,6 +85,7 @@
 		C126D63C1DB6C0B6006F72E8 /* iDidMoveToView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iDidMoveToView.swift; sourceTree = "<group>"; };
 		C126D63F1DB6C58F006F72E8 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
 		C126D6421DB6C7B0006F72E8 /* iTouchesBegan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTouchesBegan.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		C1465B1A1DBDC5BF00589B4C /* button test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "button test.swift"; sourceTree = "<group>"; };
 		C14B9FC21DB6B17E00C954C7 /* Spinny iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spinny iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14B9FC51DB6B17E00C954C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Spinny iOS/AppDelegate.swift"; sourceTree = "<group>"; };
 		C14B9FC91DB6B17E00C954C7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C1248BD51DB6B8A400C92913 /* console */,
+				C1465B1A1DBDC5BF00589B4C /* button test.swift */,
 				C1248BD71DB6B8A400C92913 /* main.swift */,
 			);
 			name = CONSOLE;
@@ -440,6 +443,7 @@
 				C1E621501DB6D29A001EE3B3 /* util.swift in Sources */,
 				C1248BD81DB6B8A400C92913 /* main.swift in Sources */,
 				C1F730491DB960360032AAC8 /* GloVars.swift in Sources */,
+				C1465B1B1DBDC5BF00589B4C /* button test.swift in Sources */,
 				C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D221DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */,
