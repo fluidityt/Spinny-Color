@@ -117,7 +117,7 @@ final internal class Button {
 	}
 	
 	/// Clicks
-	var on_click: () = ()
+	var on_click: ()->() = {}
 
 // MARK: - Accessible funcs:
 
@@ -136,8 +136,34 @@ final internal class Button {
 	static var dictionary = [Int: Button]()
 	
 	/// Handles all the grunt work from the last 2:
-	static func checkForAndHandleClicks() -> Bool {
-		return false
+	static func checkForAndHandleClicks(location: CGPoint, scene: SKScene) -> Bool {
+		let clicked_node = scene.nodeAtPoint(location).name
+		
+		// Match node with id:
+		if ((clicked_node?.containsString("Button # ")) != nil){
+			
+			// HORRIBLE MATCHING FFS:
+			var counter = -1
+			let found_button: Button
+			
+			// I guess would need to figure out how to pop or set to nil...
+			while counter != self.dictionary.count { counter += 1
+				
+				// Assign the correct button to local found_button, break loop:
+				if self.dictionary[counter]?.background_node.name == clicked_node {
+					found_button = self.dictionary[counter]!
+					break
+				}
+			}
+			
+			// Execute button, then return from function:
+			found_button.on_click()
+			return true
+		}
+		else {
+			// No button found:
+			return false
+		}
 	}
 	
 // MARK: Init:
@@ -152,13 +178,13 @@ final internal class Button {
 		
 		// Node stuff:
 		self.background_node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-		self.label_node = SKLabelNode(text: text)
+		self.label_node 		 = SKLabelNode(text: text)
 		self.background_node.addChild(self.label_node)
-		
+
 		// Property stuff:
 		self.position = CGPoint(x:0,y:0)
-		self.text = ""
-		self.text = text
+		self.text			= ""
+		self.text     = text
 		
 		// ID assignment:
 		Button.number_of_buttons += 1
