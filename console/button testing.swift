@@ -72,7 +72,10 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 	
 		/** Uses Globals!!! butter# is used to init the nodes in init body.. */
 		private init(butter1: ButtonNode = this.makeButton1(this.amountNeeded(gv)),
-								 butter2: ButtonNode = this.makeButton2(grabAGlobe(g!).current_money)) {
+								 
+		             ADJUST FOR NEW CONFIG FILE
+		             
+		             butter2: ButtonNode = this.makeButton2(grabAGlobe(g!).current_money)) {
 			button1 = butter1
 			button2 = butter2
 		}
