@@ -51,6 +51,7 @@
 		C1F730491DB960360032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
 		C1FFD97F1DBF27640055ACFF /* button global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFD97E1DBF27640055ACFF /* button global.swift */; };
 		C1FFD9831DBF28D10055ACFF /* button testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFD9821DBF28D10055ACFF /* button testing.swift */; };
+		C1FFD9851DBF2D7E0055ACFF /* button config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFD9841DBF2D7E0055ACFF /* button config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,7 @@
 		C1F730421DB95C130032AAC8 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		C1FFD97E1DBF27640055ACFF /* button global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "button global.swift"; sourceTree = "<group>"; };
 		C1FFD9821DBF28D10055ACFF /* button testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "button testing.swift"; sourceTree = "<group>"; };
+		C1FFD9841DBF2D7E0055ACFF /* button config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "button config.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 			children = (
 				C1248BD71DB6B8A400C92913 /* main.swift */,
 				C1FFD97E1DBF27640055ACFF /* button global.swift */,
+				C1FFD9841DBF2D7E0055ACFF /* button config.swift */,
 				C1FFD9821DBF28D10055ACFF /* button testing.swift */,
 			);
 			name = current;
@@ -470,6 +473,7 @@
 				C1CB9D2E1DBC55D900469C72 /* Button.swift in Sources */,
 				C1CB9D221DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */,
+				C1FFD9851DBF2D7E0055ACFF /* button config.swift in Sources */,
 				C1CB9D261DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
 				C1F730461DB95FF10032AAC8 /* Nodes.swift in Sources */,
 				C1FFD9831DBF28D10055ACFF /* button testing.swift in Sources */,
