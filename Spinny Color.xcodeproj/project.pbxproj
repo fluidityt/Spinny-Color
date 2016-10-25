@@ -49,6 +49,7 @@
 		C1F730471DB9601D0032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
 		C1F730481DB9601E0032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
 		C1F730491DB960360032AAC8 /* GloVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7303C1DB9582D0032AAC8 /* GloVars.swift */; };
+		C1FFD97F1DBF27640055ACFF /* new button global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFD97E1DBF27640055ACFF /* new button global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,6 +103,7 @@
 		C1F7303A1DB957C10032AAC8 /* Nodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C1F7303C1DB9582D0032AAC8 /* GloVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GloVars.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C1F730421DB95C130032AAC8 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		C1FFD97E1DBF27640055ACFF /* new button global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "new button global.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				C1248BD51DB6B8A400C92913 /* console */,
 				C1465B1A1DBDC5BF00589B4C /* button test.swift */,
+				C1FFD97E1DBF27640055ACFF /* new button global.swift */,
 				C1248BD71DB6B8A400C92913 /* main.swift */,
 			);
 			name = CONSOLE;
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1E621501DB6D29A001EE3B3 /* util.swift in Sources */,
+				C1FFD97F1DBF27640055ACFF /* new button global.swift in Sources */,
 				C1248BD81DB6B8A400C92913 /* main.swift in Sources */,
 				C1F730491DB960360032AAC8 /* GloVars.swift in Sources */,
 				C1465B1B1DBDC5BF00589B4C /* button test.swift in Sources */,

@@ -151,13 +151,14 @@ final internal class Button {
 				
 				// Assign the correct button to local found_button, break loop:
 				if self.dictionary[counter]?.background_node.name == clicked_node {
+					
+					// Execute button, then return from function:
 					found_button = self.dictionary[counter]!
+					found_button.on_click()
 					break
 				}
 			}
 			
-			// Execute button, then return from function:
-			found_button.on_click()
 			return true
 		}
 		else {
