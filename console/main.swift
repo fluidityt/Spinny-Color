@@ -1,24 +1,24 @@
 import SpriteKit
 
-private func test() {
-	// MARK: - Tests: -
+
+// MARK: - Tests: -
+
+/** When we change scenes */	deleteAButton: do {
 	
-	/** When we change scenes */	deleteAButton: do {
-		
-	}
+}
+
+/** If score is over 50, change text to "Cash Out" */ 	changeAButton: do {
 	
-	/** If score is over 50, change text to "Cash Out" */ 	changeAButton: do {
-		
-	}
+}
+
+/** Maybe update the button every 2 frames? */	update: do {
 	
-	/** Maybe update the button every 2 frames? */	update: do {
-		
-		// Before update:
-		//print(glNodes.scene1_buttons.button1.text)
-		
-		// After update:
-		
-	}
+	// Before update:
+	
+	// After update:
+	
 }
 
 
+
+print(g.objects.nodes.scene1_buttons.button2.text, n)

@@ -58,8 +58,8 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 	
 		/** "Cash Out" with current amount of $ - IA */
 		let button2: ButtonNode
-		private static func makeButton2(global_current_money: Int) -> ButtonNode {
-			let the_text = "Cash Out \(global_current_money)"
+		private static func makeButton2(g_current_money: Int) -> ButtonNode {
+			let the_text = "Cash Out \(g_current_money)"
 			return (
 				ButtonNode( on_click: {print("You can stop now or keep scoring...")},
 					text: the_text,
@@ -70,9 +70,9 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 		
 	// MARK: Initializer:
 	
-		/** Uses Globals!!! butter# = variable to init the nodes.. */
-		init(butter1: ButtonNode = this.makeButton1(this.amountNeeded(g)),
-		     butter2: ButtonNode = this.makeButton2(g.current_money)) {
+		/** Uses Globals!!! butter# is used to init the nodes in init body.. */
+		private init(butter1: ButtonNode = this.makeButton1(this.amountNeeded(gv)),
+								 butter2: ButtonNode = this.makeButton2(grabAGlobe(g!).current_money)) {
 			button1 = butter1
 			button2 = butter2
 		}
