@@ -1,24 +1,27 @@
 import SpriteKit
 
 
-// MARK: - Tests: -
 
-/** When we change scenes */	deleteAButton: do {
+class InheritButtonConfig {
+
+	struct ButtonConfigs {}
+	
+	func sayhi() {}
+
+	
+	init() {}
+	deinit {		print("because nobody needs this object anymore") 	}
+}
+
+class gs: InheritButtonConfig {
+	
+	override init() {	}
 	
 }
 
-/** If score is over 50, change text to "Cash Out" */ 	changeAButton: do {
-	
-}
-
-/** Maybe update the button every 2 frames? */	update: do {
-	
-	// Before update:
-	
-	// After update:
-	
-}
 
 
 
-print(g.objects.nodes.scene1_buttons.button2.text, n)
+
+
+
