@@ -8,8 +8,10 @@
 
 import SpriteKit
 
-struct GlobalConfig {
 
-	/** See also: ButtonNode */	let button_amount_need = 50
+struct System3 {
 
+	var globals = GlobalVars()
+	
+	var scenals = Scene
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1006ABB1DC05DAC00F4AC6B /* Scene 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1006ABA1DC05DAC00F4AC6B /* Scene 1.swift */; };
 		C1248B761DB6B1DF00C92913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1248B751DB6B1DF00C92913 /* AppDelegate.swift */; };
 		C1248B7A1DB6B1DF00C92913 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1248B791DB6B1DF00C92913 /* GameScene.sks */; };
 		C1248B7C1DB6B1DF00C92913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1248B7B1DB6B1DF00C92913 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C1006ABA1DC05DAC00F4AC6B /* Scene 1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene 1.swift"; sourceTree = "<group>"; };
 		C1248B731DB6B1DF00C92913 /* Spinny macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spinny macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1248B751DB6B1DF00C92913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1248B791DB6B1DF00C92913 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = "Spinny macOS/GameScene.sks"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				C1248BD71DB6B8A400C92913 /* main.swift */,
 				C1FFD97E1DBF27640055ACFF /* button global.swift */,
+				C1006ABA1DC05DAC00F4AC6B /* Scene 1.swift */,
 				C1FFD9841DBF2D7E0055ACFF /* button config.swift */,
 				C1FFD9821DBF28D10055ACFF /* button testing.swift */,
 			);
@@ -474,6 +477,7 @@
 				C1CB9D221DBC45C300469C72 /* iTouchesMoved.swift in Sources */,
 				C1CB9D2A1DBC49F600469C72 /* iUpdate.swift in Sources */,
 				C1FFD9851DBF2D7E0055ACFF /* button config.swift in Sources */,
+				C1006ABB1DC05DAC00F4AC6B /* Scene 1.swift in Sources */,
 				C1CB9D261DBC45DE00469C72 /* iTouchesEnded.swift in Sources */,
 				C1F730461DB95FF10032AAC8 /* Nodes.swift in Sources */,
 				C1FFD9831DBF28D10055ACFF /* button testing.swift in Sources */,

@@ -14,23 +14,22 @@ import SpriteKit
 
 // MARK: - TOP: -
 
-/** Object for all scenes: */	struct ButtonNode {
-		
-		/** Code that is run: */		let on_click: ()->()
-		
-		/** Text displayed... */		let text: String
-			
-		/** Mutable for SK r: */		let node: SKNode
+/** Object for all scenes: */
+struct ButtonNode {
+	
+	/** Code that is run: */
+	let on_click: ()->()
+	
+	/** Text displayed... */
+	let text: String
+
+	/** Mutable for SK r: */
+	let node: SKNode
 }
 
+	/** Lists for scene1: Keep scoring / Cash out -- IMMUTABLE -- use Init for new shit */
+	struct ForScene1 { typealias this = ForScene1
 
-// MARK: - MIDDLE: -
-
-/** Lists for scene1: Keep scoring / Cash out -- IMMUTABLE -- use Init for new shit */
-struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
-	
-	// MARK:  Statics:
-	
 		/** Returns the current amount from a global */
 		private static func currentAmount(global_instance: GlobalVars) -> Int {
 			return global_instance.current_money
@@ -38,7 +37,7 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 	
 		/** Amount of $ you need before the button2 will show - IA */
 		private static func amountNeeded(global_vars: GlobalVars) -> Int {
-			let amount_needed = global_vars.objects.config.button_amount_need
+			let amount_needed = ˛global_vars.objects.config.button_amount_need
 			let current_amount = global_vars.current_money
 			return amount_needed - current_amount
 		}
@@ -73,7 +72,7 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 		/** Uses Globals!!! butter# is used to init the nodes in init body.. */
 		private init(butter1: ButtonNode = this.makeButton1(this.amountNeeded(gv)),
 								 
-		             ADJUST FOR NEW CONFIG FILE
+		             ADJUST FOR NEW CONFIG FILE #
 		             
 		             butter2: ButtonNode = this.makeButton2(grabAGlobe(g!).current_money)) {
 			button1 = butter1
@@ -81,6 +80,6 @@ struct ListOfButtonNodesForScene1 { typealias this = ListOfButtonNodesForScene1
 		}
 	
 	}// EoC
-
+}
 // MARK: - END -
 
