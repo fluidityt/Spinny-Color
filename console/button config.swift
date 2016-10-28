@@ -8,10 +8,3 @@
 
 import SpriteKit
 
-
-struct System3 {
-
-	var globals = GlobalVars()
-	
-	var scenals = Scene
-}
